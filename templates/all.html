@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ALL POSTS
+{% endblock %}
+
+{% block form %}
+
+{% if message %}
+    <div class="form">
+        <p>{{ message }}</p>
+    </div>
+{% endif %}
+
+{% if all_posts %}
+    {% for post_title in all_posts %}
+        <div class="form">
+            <p>{{ post_title }}</p>
+            <p class="message">{{ all_posts[post_title] }}</p>
+        </div>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}
