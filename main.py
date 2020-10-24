@@ -5,7 +5,7 @@ app = Flask(__name__)
 app.secret_key = 'test'
 
 def check_passwd(username,password):
-    f = open('database/login_info.json','r')
+    f = open('/var/www/HiddenBiscuits/HiddenBiscuits/database/login_info.json','r')
     login_info = json.load(f)
     found = False
     for user in login_info:
@@ -21,7 +21,7 @@ def check_passwd(username,password):
     return found
 
 def check_username(username):
-    f = open('database/login_info.json','r')
+    f = open('/var/www/HiddenBiscuits/HiddenBiscuits/database/login_info.json','r')
     login_info = json.load(f)
     found = False
     for user in login_info:
@@ -33,7 +33,7 @@ def check_username(username):
 
 def add_post(title, content, username):
     post = {title:content}
-    file_name = f'database/posts/{username}.json'
+    file_name = f'/var/www/HiddenBiscuits/HiddenBiscuits/database/posts/{username}.json'
     try:
         f = open(file_name,'r')
         all_posts = json.load(f)
@@ -47,7 +47,7 @@ def add_post(title, content, username):
     f.close()
 
 def add_user(username, name, password):
-    f = open('database/login_info.json','r')
+    f = open('/var/www/HiddenBiscuits/HiddenBiscuits/database/login_info.json','r')
     all_data = json.load(f)
     f.close()
     entry = {
@@ -58,7 +58,7 @@ def add_user(username, name, password):
     }
     all_data.update(entry)
     json_data = json.dumps(all_data, indent=4)
-    f = open('database/login_info.json','w')
+    f = open('/var/www/HiddenBiscuits/HiddenBiscuits/database/login_info.json','w')
     f.write(json_data)
     f.close()
 
@@ -125,7 +125,7 @@ def create():
 def all():
     username = session['logged_in_as']
     try:
-        filename = f'database/posts/{username}.json'
+        filename = f'/var/www/HiddenBiscuits/HiddenBiscuits/database/posts/{username}.json'
         f = open(filename,'r')
         all_posts = json.load(f)
         f.close()
