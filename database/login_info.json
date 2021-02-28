@@ -1,10 +1,6 @@
 {
     "admin": {
-        "name": "Admin",
-        "password": "I will not tell"
-    },
-    "agpriyansh": {
-        "name": "Priyansh",
-        "password": "drockx"
+        "name": "<admin username here>",
+        "password": "<admin password here>"
     }
 }
