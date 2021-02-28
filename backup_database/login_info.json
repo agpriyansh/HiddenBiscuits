@@ -1,6 +1,6 @@
 {
     "admin":{
-        "name":"Admin",
-        "password":"I will not tell"
+        "name":"<admin username here>",
+        "password":"<admin password here>"
     }
 }
